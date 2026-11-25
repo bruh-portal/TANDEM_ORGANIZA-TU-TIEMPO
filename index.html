@@ -78,14 +78,15 @@ body:before{z-index:0;background-image:linear-gradient(#BFD9C309 1px,transparent
 .task-mode-switch{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 14px}.task-mode-switch .btn{min-height:44px;flex:1 1 180px}.task-mode-switch .btn[aria-pressed="true"]{background:var(--purple);color:#fff;border-color:transparent}.task-mode-panel[hidden]{display:none!important}.task-mode-panel .section-head{margin-bottom:16px}.task-mode-panel #planPreview,.task-mode-panel #replanPreview{margin-top:14px}
 
 
-/* Alineación final según la captura: botón del menú con rayas centradas y contenido siempre dentro de márgenes iguales. */
-.app{width:100%;max-width:900px;margin-inline:auto;box-sizing:border-box;padding-left:clamp(16px,2vw,22px);padding-right:clamp(16px,2vw,22px)}
-.view,.view>*{min-width:0;max-width:100%;box-sizing:border-box}
-.view>section.card,.view>.card,.view>.hero,.view>.assistant,.view>.dash-grid{width:100%;max-width:100%;margin-left:0;margin-right:0}
-.timer-layout,.voice-layout{width:100%;max-width:100%;min-width:0}
-#menuOpen{display:grid;place-items:center;justify-items:center;padding:0;margin-left:-4px;transform:none}
-#menuOpen .hamb{place-self:center;align-items:center}
-@media(max-width:520px){.app{width:100%;max-width:100%;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}.view>section.card,.view>.card{margin-left:0;margin-right:0}}
+/* Márgenes visibles y uniformes: el contenedor completo queda separado de ambos bordes. */
+.app{box-sizing:border-box;width:calc(100% - 40px);max-width:980px;margin-left:auto!important;margin-right:auto!important;padding-left:0!important;padding-right:0!important}
+.view{box-sizing:border-box;width:100%;max-width:100%;min-width:0}
+.view>*{box-sizing:border-box;max-width:100%;min-width:0}
+.view>.card,.view>section.card,.view>.hero,.view>.assistant,.view>.dash-grid,.view>.welcome-banner{width:100%;max-width:100%;margin-left:0!important;margin-right:0!important}
+.timer-layout,.voice-layout{box-sizing:border-box;width:100%;max-width:100%;min-width:0;margin-left:0!important;margin-right:0!important}
+#menuOpen{display:grid!important;place-items:center!important;justify-items:center!important;align-self:center;margin-left:0!important;margin-right:0!important;padding:0!important;transform:none!important}
+#menuOpen .hamb{display:flex;align-items:center;justify-content:center;place-self:center}
+@media(max-width:520px){.app{width:calc(100% - max(32px,env(safe-area-inset-left) + env(safe-area-inset-right) + 16px));max-width:none;margin-inline:auto!important;padding-left:0!important;padding-right:0!important}.topbar{width:100%;box-sizing:border-box}.view>.card,.view>section.card,.view>.hero,.view>.assistant,.view>.dash-grid,.view>.welcome-banner{width:100%;margin-inline:0!important}.timer-layout,.voice-layout{width:100%;margin-inline:0!important}}
 </style>
 </head>
 <body>
