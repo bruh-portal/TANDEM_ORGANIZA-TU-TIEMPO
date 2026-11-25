@@ -77,10 +77,15 @@ body:before{z-index:0;background-image:linear-gradient(#BFD9C309 1px,transparent
 
 .task-mode-switch{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 14px}.task-mode-switch .btn{min-height:44px;flex:1 1 180px}.task-mode-switch .btn[aria-pressed="true"]{background:var(--purple);color:#fff;border-color:transparent}.task-mode-panel[hidden]{display:none!important}.task-mode-panel .section-head{margin-bottom:16px}.task-mode-panel #planPreview,.task-mode-panel #replanPreview{margin-top:14px}
 
-/* Ajuste solicitado: mismo margen lateral en toda la app; el icono de menú se desplaza dentro de su botón sin sacar el botón del margen. */
-.app{padding-left:calc(20px + env(safe-area-inset-left));padding-right:calc(20px + env(safe-area-inset-right))}
-#menuOpen{justify-items:start;padding-left:9px}
-@media(max-width:520px){.app{padding-left:calc(16px + env(safe-area-inset-left));padding-right:calc(16px + env(safe-area-inset-right))}}
+
+/* Alineación final según la captura: botón del menú con rayas centradas y contenido siempre dentro de márgenes iguales. */
+.app{width:100%;max-width:900px;margin-inline:auto;box-sizing:border-box;padding-left:clamp(16px,2vw,22px);padding-right:clamp(16px,2vw,22px)}
+.view,.view>*{min-width:0;max-width:100%;box-sizing:border-box}
+.view>section.card,.view>.card,.view>.hero,.view>.assistant,.view>.dash-grid{width:100%;max-width:100%;margin-left:0;margin-right:0}
+.timer-layout,.voice-layout{width:100%;max-width:100%;min-width:0}
+#menuOpen{display:grid;place-items:center;justify-items:center;padding:0;margin-left:-4px;transform:none}
+#menuOpen .hamb{place-self:center;align-items:center}
+@media(max-width:520px){.app{width:100%;max-width:100%;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}.view>section.card,.view>.card{margin-left:0;margin-right:0}}
 </style>
 </head>
 <body>
